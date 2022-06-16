@@ -15,5 +15,4 @@ command = "npm install && npm run build"
 [build.upload]
 format = "service-worker"
 
-main = "./worker.js"
 
