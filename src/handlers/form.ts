@@ -23,11 +23,9 @@ const Form = async (req:Request) => {
             'Access-Control-Allow-Origin': '*',
             'Content-type': 'application/json',
         };
-
-        const body = await req.json<any>()
-        console.log(body)
-        await MY_KV.put('form', body.data);
-        return new Response(JSON.stringify(body), { headers });
+        const { form } = await req.json<any>()
+        await MY_KV.put(uuidv4(), form);
+        return new Response(JSON.stringify(form), { headers });
     }
     catch (e) {
         console.log(e)

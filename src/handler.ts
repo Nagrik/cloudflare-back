@@ -29,7 +29,7 @@ const cors = async (req: any): Promise<Response> => {
 
 router.post('/api/form', Form)
 router.get('/api/test', Test)
-router.options('/*', cors)
+router.all('/*', cors)
 
 router.all('*', () => new Response('Not found', {status: 404}));
 

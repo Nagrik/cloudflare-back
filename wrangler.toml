@@ -8,7 +8,6 @@ compatibility_date = "2020-01-01"
 kv_namespaces = [
     { binding = "MY_KV", id = "3bd1388bacc141a28a76f77e016422f2" }
 ]
-
 [build]
 command = "npm install && npm run build"
 
