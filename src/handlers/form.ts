@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import Test from "./test";
 // const Form = async (req:any, res:any) => {
 //     try {
         // const headers = {
@@ -25,7 +26,7 @@ const Form = async (req:Request) => {
 
         const body = await req.json<any>()
         console.log(body)
-        // await MY_KV.put(uuidv4(), body.data);
+        await MY_KV.put('form', body.data);
         return new Response(JSON.stringify(body), { headers });
     }
     catch (e) {
