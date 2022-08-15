@@ -8,6 +8,7 @@ import XeroContact from "./handlers/XeroContact";
 import XeroRefreshToken from "./handlers/XeroRefreshToken";
 import base64 from "base-64";
 import Attachment from "./handlers/Attachment";
+import createPdf from "./handlers/createPdf";
 
 const router = Router();
 const cors = async (req: any): Promise<Response> => {
@@ -37,6 +38,7 @@ router.post('/api/refresh', XeroRefreshToken);
 router.post('/api/contact', XeroContact)
 router.post('/api/attachment', Attachment)
 router.post('/api/form', Form)
+router.post('/api/createPdf', createPdf)
 router.post('/api/form/:id', FormPostId)
 router.get('/api/form/:id', FormId)
 router.get('/api/test', Test)

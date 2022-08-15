@@ -7,7 +7,8 @@ const Attachment = async (req: any) => {
     const token = res.get('token')
     const ContactId = res.get('ContactId')
     const pdf = res.get('pdf')
-    console.log(pdf)
+    const access_token = await TOKENS.get('xero_access_token');
+
     try {
         const response = await fetch(`https://api.xero.com/api.xro/2.0/Contacts/${ContactId}/Attachments/attachment.pdf`, {
             method: 'POST',
@@ -17,7 +18,7 @@ const Attachment = async (req: any) => {
                 'xero-tenant-id': '1b0ae8ca-4b51-4d60-8ae5-af71b691ec1c',
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 //@ts-ignore
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${access_token}`
             },
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             //@ts-ignore

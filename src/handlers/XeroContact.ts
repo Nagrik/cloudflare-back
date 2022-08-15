@@ -6,6 +6,9 @@ const XeroContact = async (req:Request) => {
     const body = await req.json()
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
+    const access_token = await TOKENS.get('xero_access_token');
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
 
     try {
         const response = await fetch('https://api.xero.com/api.xro/2.0/Contacts', {
@@ -16,7 +19,7 @@ const XeroContact = async (req:Request) => {
                 'xero-tenant-id': '1b0ae8ca-4b51-4d60-8ae5-af71b691ec1c',
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 //@ts-ignore
-                Authorization: `Bearer ${body.token}`
+                Authorization: `Bearer ${access_token}`,
             },
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             //@ts-ignore

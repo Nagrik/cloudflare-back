@@ -7,7 +7,8 @@ compatibility_date = "2020-01-01"
 formdata_parser_supports_files = true
 
 kv_namespaces = [
-    { binding = "MY_KV", id = "3bd1388bacc141a28a76f77e016422f2" }
+    { binding = "MY_KV", id = "3bd1388bacc141a28a76f77e016422f2" },
+    { binding = "TOKENS", id = "f7c4f429dc2a45eb9d826ed8c6029ee5" }
 ]
 [build]
 command = "npm install && npm run build"
